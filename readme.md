@@ -5,7 +5,7 @@ Web Fonts Comparator
 (in particular, the fonts that are considered [safe for web use](http://www.w3schools.com/cssref/css_websafe_fonts.asp)).
 
 It's useful for identify unknowns fonts in images or pictures, 
-or when you find which is the safe font most similar to a non-safe font.
+or when you want to find which is the _safe font_ most similar to a _non-safe font_.
 
 **[Try it now](http://jfmdev.github.io/WebFontsComparator/)**
 
