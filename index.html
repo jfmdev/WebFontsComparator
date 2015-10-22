@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Web fonts comparator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- jQuery -->
+        <script src="libs/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+        <!-- Bootstrap -->
+        <link href="libs/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
+        <link href="libs/bootstrap/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
+        <script src="libs/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- AngularJS -->
+        <script src="libs/angular-1.3.6.min.js" type="text/javascript"></script>
+
+        <!-- SweetAlert -->
+        <link href="libs/sweetalert/SweetAlert.css" type="text/css" rel="stylesheet" />
+        <script src="libs/sweetalert/SweetAlert.min.js" type="text/javascript"></script>
+        <script src="libs/sweetalert/ngSweetAlert.min.js" type="text/javascript"></script>
+
+        <!-- App -->
+        <link href="app/main.css" type="text/css" rel="stylesheet" />
+        <script src="app/main.js" type="text/javascript"></script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="myController" class="container text-center">
+            <div class="row settings">
+                <div class="col-sm-3">
+                    <input type="text" ng-model="text" style="width: 100%"  />
+                </div>
+                <div class="col-sm-3">
+                    <input type="number" ng-model="size" style="width: 50%" />
+                    <select ng-model="unit">
+                        <option value="em">em</option>
+                        <option value="px">px</option>
+                        <option value="pt">pt</option>
+                    </select>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <input type="checkbox" ng-model="bold" />
+                    Bold
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <input type="checkbox" ng-model="italic" />
+                    Italic
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <input type="checkbox" ng-model="upper" />
+                    Upper
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row fonts" ng-repeat="group in fonts">
+                <div class="col-sm-3" ng-repeat="font in group">
+                    <div class="box" ng-click="clicked(font)">
+                        <span class="description">{{ getFirst(font) }}</span><br>
+                        <span ng-style="{'font-family': font, 'font-size': (size + unit), 'font-weight': (bold? 'bold' : 'normal'), 'font-style': (italic? 'italic' : 'normal'), 'text-transform': (upper? 'uppercase' : 'none') }">{{ text }}<span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
