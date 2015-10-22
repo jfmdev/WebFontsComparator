@@ -7,7 +7,7 @@ Web Fonts Comparator
 It's useful for identify unknowns fonts in images or pictures, 
 or when you find which is the safe font most similar to a non-safe font.
 
-[Try it](http://jfmdev.github.io/WebFontsComparator/)
+**[Try it now](http://jfmdev.github.io/WebFontsComparator/)**
 
 License
 -------
