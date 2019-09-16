@@ -1,8 +1,14 @@
 // Initialize variables.
 var deferredInstallPrompt = null;
 var installButton = document.getElementById('btn_install');
+var installContainer = document.getElementById('div_install');
+console.log(installButton);
+console.log(installContainer);
 if(installButton) {
   installButton.addEventListener('click', installPWA);
+}
+if(installContainer) {
+  installContainer.style.display = 'none';
 }
 
 // Add event listener for beforeinstallprompt event.
@@ -11,7 +17,9 @@ window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 function saveBeforeInstallPromptEvent(evt) {
   // Add code to save event & show the install button.
   deferredInstallPrompt = evt;
-  installButton.removeAttribute('hidden');
+  if(installContainer) {
+    installContainer.style.display = 'initial';
+  }
 }
 
 
